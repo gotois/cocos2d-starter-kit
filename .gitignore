@@ -1,0 +1,15 @@
+# Deployed App
+www/
+node_modules/
+
+# Cordova
+platforms/*
+plugins/*
+runtime/*
+tools/*
+frameworks/*
+
+# Other
+*.doc
+.idea
+*.log

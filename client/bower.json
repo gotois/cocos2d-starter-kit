@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "authors": [
+  ],
+  "description": "",
+  "main": "main.js",
+  "moduleType": [],
+  "keywords": [
+  ],
+  "license": "Apache License",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
