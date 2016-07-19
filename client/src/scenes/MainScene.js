@@ -1,5 +1,3 @@
-import {res} from '../elements/resources/resource.js';
-import scenes from './scenes.js';
 import layers from './../layers/layers.js';
 
 export default cc.Scene.extend({
@@ -9,7 +7,11 @@ export default cc.Scene.extend({
 });
 
 function ctor() {
-	this._super();
+  this._super();
+
+  const menuLayer = new layers.MenuLayer();
+  this.addChild(menuLayer);
+ 
 }
 
 function onEnter() {

@@ -1,11 +1,11 @@
+import './elements/resources/g_resources.js';
 import scenes from './scenes/scenes.js';
-import {g_resources} from './elements/resources/resource.js';
 
 cc.Scene.implement({$: {}});
 
 function run() {
 
-  cc.loader.load(g_resources, () => {
+  cc.loader.load(window.g_resources, () => {
     const logo = cc.$('#logo');
     logo.parentNode.removeChild(logo);
 
@@ -23,7 +23,7 @@ if (cc.sys.isMobile) {
 function deviceready() {
 
   Promise
-  	.all([])
+    .all([])
     .then(() => {
     })
     .catch(err => {

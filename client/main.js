@@ -8,9 +8,8 @@ cc.game.onStart = function () {
 
   cc.view.enableRetina(cc.sys.os === cc.sys.OS_IOS);
   cc.view.setDesignResolutionSize(WIDTH, HEIGHT, cc.ResolutionPolicy.SHOW_ALL);
-  cc.view.setResolutionPolicy(cc.ResolutionPolicy.NO_BORDER);
-  cc.view.resizeWithBrowserSize(false);
-  cc.view.adjustViewPort(true);
+  cc.view.resizeWithBrowserSize(true);
+  cc.view.adjustViewPort(false);
 
 };
 cc.game.run();

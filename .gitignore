@@ -1,6 +1,7 @@
 # Deployed App
 www/
 node_modules/
+bower_components/
 
 # Cordova
 platforms/*

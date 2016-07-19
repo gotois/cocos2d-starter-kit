@@ -1,5 +1,4 @@
 'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
 
@@ -12,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, './dist'),
-    filename: '[name].min.js'
+    filename: '[name].min.js'//TODO: rename game.min.js
   },
   watch: true,
   plugins: [

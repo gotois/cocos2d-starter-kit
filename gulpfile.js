@@ -1,16 +1,15 @@
 'use strict';
-
 const gulp = require('gulp');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const runSequence = require('run-sequence');
-const nodemon = require('nodemon');
 const shell = require('gulp-shell');
 const eslint = require('gulp-eslint');
 const del = require('del');
 const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
 const webpackConfig = require("./client/webpack.config.js");
+//const nodemon = require('nodemon');
 
 /**
  * lint JavaScript
@@ -54,16 +53,16 @@ gulp.task('webpack-build', (cb) => {
 
   config.plugins = config.plugins.concat(
     new webpack.DefinePlugin({
-      "process.env": {
-        "NODE_ENV": JSON.stringify("production")
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
       }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   );
 
-  webpack(config, function(err) {
-    if(err) {
+  webpack(config, function (err) {
+    if (err) {
       throw err;
     }
 
@@ -127,14 +126,14 @@ gulp.task('www', ['clean'], () => {
  */
 gulp.task('serve', () => {
 
-  return browserSync.init('./client/index.html',{
+  return browserSync.init('./client/index.html', {
     notify: true,
     ghostMode: false,
     logPrefix: 'PSK',
     // https: true,
     https: false,
-    port: 8000,
-    browser: ['google chrome'],
+    port: 5000,
+    browser: [/*'google chrome'*/],
     minify: false,
     server: {
       baseDir: ['./client'],
@@ -172,7 +171,7 @@ gulp.task('compress', () => {
       '!www/dist/*.js'
     ], {base: './'})
     .pipe(uglify())
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('.'));
 
 });
 
@@ -198,7 +197,7 @@ gulp.task('default', cb => {
   return runSequence(
     [
       'webpack',
-      'nodemon',
+      //'nodemon',
       'serve'
     ],
     cb
