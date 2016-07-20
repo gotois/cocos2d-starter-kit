@@ -6,6 +6,6 @@
   "id": "gameCanvas",
   "renderMode": 1,
   "jsList": [
-    "./dist/app.min.js"
+    "./dist/game.min.js"
   ]
 }

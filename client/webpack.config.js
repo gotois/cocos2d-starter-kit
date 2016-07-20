@@ -6,12 +6,12 @@ module.exports = {
   cache: true,
   debug: true,
   entry: {
-    app: __dirname + '/src/app.js'
+    'game': __dirname + '/src/game.js'
   },
   devtool: 'source-map',
   output: {
-    path: path.join(__dirname, './dist'),
-    filename: '[name].min.js'//TODO: rename game.min.js
+    'path': path.join(__dirname, './dist'),
+    'filename': '[name].min.js'
   },
   watch: true,
   plugins: [

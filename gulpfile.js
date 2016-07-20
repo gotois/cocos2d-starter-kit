@@ -35,7 +35,7 @@ gulp.task('lint', () => {
 gulp.task('webpack', () => {
 
   return gulp
-    .src('./client/src/app.js')
+    .src('./client/src/game.js')
     .pipe(webpackStream(webpackConfig))
     .pipe(gulp.dest('./client/dist/'));
 
