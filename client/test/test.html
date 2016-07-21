@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+
+    <link rel="stylesheet"
+          href="../../node_modules/mocha/mocha.css">
+
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script src="../../bower_components/system.js/dist/system.js"></script>
+    <script src="../../bower_components/cocos2d-html5/CCBoot.js"></script>
+</head>
+<body>
+
+<div id="mocha"></div>
+
+<script>
+    mocha.ui('bdd');
+    assert = chai.assert;
+
+    SystemJS.config({
+        transpiler: 'plugin-babel',
+        map: {
+            'plugin-babel': '../../node_modules/systemjs-plugin-babel/plugin-babel.js',
+            'systemjs-babel-build': '../../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+        },
+        meta: {
+            '*.js': {
+                babelOptions: {
+                    es2015: true
+                }
+            }
+        }
+    });
+
+    SystemJS.import('runner.js');
+</script>
+
+</body>
+</html>

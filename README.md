@@ -4,22 +4,21 @@
 
 ```sh
 npm install
+bower install
 ```
 
 Put cocos2d engine to `client/vendors/cocos2d.js`
 
 ## Tests 
 
+### Run all tests
 ```
-# Client tests
 npm test
 ```
 
-## Run
-
+### Run client tests
 ```sh
-# All (Client and server)
-npm run
+./node_modules/.bin/mocha-phantomjs  -R dot ./client/test/test.html 
 ```
 
 Open page `http://localhost:5000/`

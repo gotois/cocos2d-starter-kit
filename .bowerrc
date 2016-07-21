@@ -1,0 +1,8 @@
+{
+  "registry": "http://bower.herokuapp.com",
+  "directory": "bower_components/",
+  "color": true,
+  "interactive": false,
+  "analytics": false,
+  "timeout": 30000
+}
