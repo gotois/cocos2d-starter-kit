@@ -9,7 +9,7 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
 const webpackConfig = require("./client/webpack.config.js");
-//const nodemon = require('nodemon');
+const nodemon = require('gulp-nodemon');
 
 /**
  * lint JavaScript
@@ -79,7 +79,8 @@ gulp.task('nodemon', () => {
   return nodemon({
     script: `./server/web_server.js`,
     ignore: [
-      'node_modules/'
+      'node_modules/',
+      'bower_components/'
     ],
     env: {
       HOST: 'localhost',
@@ -130,7 +131,6 @@ gulp.task('serve', () => {
     notify: true,
     ghostMode: false,
     logPrefix: 'PSK',
-    // https: true,
     https: false,
     port: 5000,
     browser: [/*'google chrome'*/],
@@ -139,7 +139,7 @@ gulp.task('serve', () => {
       baseDir: ['./client'],
       middleware: [],
       routes: {
-        //'/bower_components': 'bower_components'
+        '/bower_components': 'bower_components'
       }
     }
   });
