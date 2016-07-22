@@ -29,7 +29,7 @@
   },
   "scripts": {
     "run": "gulp",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./test/runner.js"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js"
   },
   "author": "Denis Baskovsky",
   "license": "Apache License"

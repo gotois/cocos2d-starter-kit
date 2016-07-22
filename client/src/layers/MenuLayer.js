@@ -5,11 +5,10 @@ export default cc.Layer.extend({
 function ctor() {
   this._super();
 
-  const size = cc.director.getWinSize();
+  const size = cc.view.getDesignResolutionSize();
 
   const sprite = new cc.Sprite('HelloWorld.png');
   sprite.setPosition(size.width / 2, size.height / 2);
-  sprite.setScale(1);
 
   this.addChild(sprite, 0);
 
@@ -19,7 +18,6 @@ function ctor() {
     40
   );
   label.setAnchorPoint(cc.p(0.5, 1));
-
   label.setPositionX(size.width / 2);
   label.setPositionY(size.height / 2);
 

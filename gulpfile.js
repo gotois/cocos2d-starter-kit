@@ -8,20 +8,26 @@ const eslint = require('gulp-eslint');
 const del = require('del');
 const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
-const webpackConfig = require("./client/webpack.config.js");
 const nodemon = require('gulp-nodemon');
+const webpackConfig = require("./client/webpack.config");
+
+const clientPath = './client';
+const serverPath = './server';
 
 /**
- * lint JavaScript
+ * Lint JavaScript
  */
 gulp.task('lint', () => {
 
   return gulp
     .src([
-      'client/src/**',
+      // Client
+      `${clientPath}/src/**`,
       '!bower_components/',
       '!node_modules/',
-      '!client/vendor/**'
+      `!${clientPath}/vendor/**`,
+      // Server
+      `${serverPath}/**`
     ])
     .pipe(eslint())
     .pipe(eslint.format())
@@ -35,16 +41,16 @@ gulp.task('lint', () => {
 gulp.task('webpack', () => {
 
   return gulp
-    .src('./client/src/game.js')
+    .src(`${clientPath}/src/game.js`)
     .pipe(webpackStream(webpackConfig))
-    .pipe(gulp.dest('./client/dist/'));
+    .pipe(gulp.dest(`${clientPath}/dist/`));
 
 });
 
 /**
- * Build
+ * Webpack src build
  */
-gulp.task('webpack-build', (cb) => {
+gulp.task('webpack-build', cb => {
 
   const config = Object.create(webpackConfig);
   config.devtool = null;
@@ -61,7 +67,7 @@ gulp.task('webpack-build', (cb) => {
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   );
 
-  webpack(config, function (err) {
+  webpack(config, err => {
     if (err) {
       throw err;
     }
@@ -77,16 +83,20 @@ gulp.task('webpack-build', (cb) => {
 gulp.task('nodemon', () => {
 
   return nodemon({
-    script: `./server/web_server.js`,
+    script: `${serverPath}/web_server.js`,
+    ext: 'json js',
     ignore: [
       'node_modules/',
-      'bower_components/'
+      'bower_components/',
+      'server/test/'
     ],
     env: {
       HOST: 'localhost',
       PORT: 4000,
       HTTP_TIMEOUT: 1000
-    }
+    },
+    stdout: false,
+    readable: false
   })
     .on('restart', () => {
       console.log('server restarted!');
@@ -97,37 +107,35 @@ gulp.task('nodemon', () => {
 });
 
 /**
- * Dist WWW
+ * WWW directory
  */
 gulp.task('www', ['clean'], () => {
-  const folder = './client';
-  const destFolder = './www/';
 
   return gulp
     .src([
-      `${folder}/*`,
-      `${folder}/dist/**/*`,
-      `${folder}/Fonts/*`,
-      `${folder}/res/**`,
-      `${folder}/vendors/**`,
-      `!${folder}/bower_components`,
-      `!${folder}/src`,
-      `!${folder}/webpack.config.js`,
+      `${clientPath}/*`,
+      `${clientPath}/dist/**/*`,
+      `${clientPath}/Fonts/*`,
+      `${clientPath}/res/**`,
+      `${clientPath}/vendors/**`,
+      `!${clientPath}/bower_components`,
+      `!${clientPath}/src`,
+      `!${clientPath}/webpack.config.js`,
       '!**/bower.json',
       '!**/*.md',
       '!**/*.sh',
       '!**/*.cmd'
-    ], {base: folder})
-    .pipe(gulp.dest(destFolder));
+    ], {base: clientPath})
+    .pipe(gulp.dest('./www/'));
 
 });
 
 /**
- * Server
+ * Start Client Server
  */
 gulp.task('serve', () => {
 
-  return browserSync.init('./client/index.html', {
+  return browserSync.init(`${clientPath}/index.html`, {
     notify: true,
     ghostMode: false,
     logPrefix: 'PSK',
@@ -136,7 +144,7 @@ gulp.task('serve', () => {
     browser: [/*'google chrome'*/],
     minify: false,
     server: {
-      baseDir: ['./client'],
+      baseDir: [clientPath],
       middleware: [],
       routes: {
         '/bower_components': 'bower_components'
@@ -147,9 +155,9 @@ gulp.task('serve', () => {
 });
 
 /**
- * Clean Output Directory
+ * Clean output directory
  */
-gulp.task('clean', (cb) => {
+gulp.task('clean', cb => {
 
   del.sync([
     './www/**'
@@ -178,14 +186,15 @@ gulp.task('compress', () => {
 /**
  * Create production build to www directory
  */
-gulp.task('build', () => {
+gulp.task('build', cb => {
 
-  return runSequence(
-    'lint',
-    'webpack-build',
-    'www',
-    'compress'
-  );
+  return runSequence([
+      'lint',
+      'webpack-build',
+      'www',
+      'compress'
+    ],
+    cb);
 
 });
 
@@ -194,10 +203,9 @@ gulp.task('build', () => {
  */
 gulp.task('default', cb => {
 
-  return runSequence(
-    [
+  return runSequence([
       'webpack',
-      //'nodemon',
+      'nodemon',
       'serve'
     ],
     cb

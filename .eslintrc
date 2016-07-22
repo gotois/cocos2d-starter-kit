@@ -15,6 +15,7 @@
       2,
       "single"
     ],
+    "no-console": 0,
     "eqeqeq": 1,
     "strict": 0
   },
@@ -25,13 +26,16 @@
   },
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "node": true,
+    "mocha": true
   },
   "extends": "eslint:recommended",
   "globals": {
     "cc": true,
     "ccui": true,
     "ccs": true,
-    "io": true
+    "io": true,
+    "assert": true
   }
 }
