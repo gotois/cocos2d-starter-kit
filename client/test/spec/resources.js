@@ -1,4 +1,4 @@
-import '../src/elements/resources/g_resources.js';
+import '../../src/elements/resources/g_resources.js';
 
 describe('Resources', () => {
 

@@ -1,3 +1,3 @@
-import './resources.js';
+import './spec/resources.js';
 
 mocha.run();

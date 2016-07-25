@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Tests</title>
+    <meta charset="UTF-8">
 
     <link rel="stylesheet"
           href="../../node_modules/mocha/mocha.css">
@@ -17,8 +17,8 @@
 <div id="mocha"></div>
 
 <script>
+    window.assert = chai.assert;
     mocha.ui('bdd');
-    assert = chai.assert;
 
     SystemJS.config({
         transpiler: 'plugin-babel',

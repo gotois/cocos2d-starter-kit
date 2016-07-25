@@ -9,6 +9,7 @@ const del = require('del');
 const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
 const nodemon = require('gulp-nodemon');
+const mochaPhantomJS = require('gulp-mocha-phantomjs');
 const webpackConfig = require("./client/webpack.config");
 
 const clientPath = './client';
@@ -141,7 +142,7 @@ gulp.task('serve', () => {
     logPrefix: 'PSK',
     https: false,
     port: 5000,
-    browser: [/*'google chrome'*/],
+    browser: [],
     minify: false,
     server: {
       baseDir: [clientPath],
@@ -195,6 +196,17 @@ gulp.task('build', cb => {
       'compress'
     ],
     cb);
+
+});
+
+/**
+ * Mocha client side tests
+ */
+gulp.task('test', () => {
+
+  return gulp
+    .src('./client/test/runner.html')
+    .pipe(mochaPhantomJS());
 
 });
 
