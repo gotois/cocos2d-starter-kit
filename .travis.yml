@@ -4,12 +4,13 @@ notifications:
   email: false
 
 node_js:
-  - 'stable'
+  - "6"
 
 before_script:
-  - npm install -g bower
+  - npm install -g bower gulp
   - npm install
   - bower install
 
 script:
   - npm test
+  - gulp build
