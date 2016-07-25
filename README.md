@@ -1,4 +1,5 @@
 # Cocos2d-Starter-Kit
+> [![Build Status](https://travis-ci.org/qertis/cocos2d-starter-kit.svg?branch=master)](https://travis-ci.org/qertis/cocos2d-starter-kit)
 
 ## Usage
 
@@ -9,6 +10,8 @@ bower install
 
 Put cocos2d engine to `client/vendors/cocos2d.js`
 
+Open page `http://localhost:5000/`
+
 ## Tests 
 
 ### Run all tests
@@ -16,9 +19,3 @@ Put cocos2d engine to `client/vendors/cocos2d.js`
 npm test
 ```
 
-### Run client tests
-```sh
-./node_modules/.bin/mocha-phantomjs  -R dot ./client/test/test.html 
-```
-
-Open page `http://localhost:5000/`
