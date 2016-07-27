@@ -1,10 +1,9 @@
 # Cocos2d-Starter-Kit
-> [![Build Status](https://travis-ci.org/qertis/cocos2d-starter-kit.svg?branch=master)](https://travis-ci.org/qertis/cocos2d-starter-kit)
+> [![Build Status](https://travis-ci.org/qertis/cocos2d-starter-kit.svg?branch=master)](https://travis-ci.org/qertis/cocos2d-starter-kit) [![devDependency Status](https://david-dm.org/qertis/cocos2d-starter-kit/dev-status.svg?style=flat-square)](https://david-dm.org/qertis/cocos2d-starter-kit#info=devDependencies) 
 
 ## Usage
 
 ```sh
-npm install -g bower
 npm install
 bower install
 ```
@@ -16,7 +15,6 @@ Open page `http://localhost:5000/`
 ## Tests 
 
 ### Run all tests
-```
+```sh
 npm test
 ```
-
