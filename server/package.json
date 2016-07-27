@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.1",
+  "description": "",
+  "main": "web_server.js",
+  "scripts": {
+    "start": "nf start"
+  },
+  "dependencies": {
+    "bunyan": "^1.7.0",
+    "foreman": "1.4.1",
+    "hapi": "^12.1.0",
+    "node-uuid": "^1.4.7",
+    "socket.io": "^1.4.4"
+  }
+}
