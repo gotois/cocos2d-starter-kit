@@ -1,15 +1,5 @@
 exports.hello = function (message) {
-  console.log('hellllllll ' + message);
+  log.info(`Hello ${ message }`);
 
-  //this.emit('Hi back at you');
-};
-
-exports.newMessage = function (newMessage) {
-
-  console.log('Got message', newMessage);
-};
-
-exports.goodbye = function () {
-
-  //this.emit('Take it easy, pal');
+  this.emit('status', 'wazzaap!');
 };

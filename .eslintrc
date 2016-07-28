@@ -15,7 +15,7 @@
       2,
       "single"
     ],
-    "no-console": 0,
+    "no-console": 1,
     "eqeqeq": 1,
     "strict": 0
   },
@@ -36,6 +36,7 @@
     "ccui": true,
     "ccs": true,
     "io": true,
-    "assert": true
+    "assert": true,
+    "log": true
   }
 }

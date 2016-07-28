@@ -4,7 +4,12 @@
   "version": "0.0.1",
   "private": false,
   "dependencies": {
-    "cordova": "^6.0.0"
+    "bunyan": "^1.8.1",
+    "cordova": "^6.0.0",
+    "foreman": "^1.4.1",
+    "hapi": "^13.5.0",
+    "node-uuid": "^1.4.7",
+    "socket.io": "^1.4.8"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -26,6 +31,7 @@
   },
   "scripts": {
     "run": "gulp",
+    "start": "./node_modules/.bin/nf start",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test"
   },
   "author": "Denis Baskovsky",
