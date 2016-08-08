@@ -1,5 +1,5 @@
 # Cocos2d-Starter-Kit
-> [![Build Status](https://travis-ci.org/qertis/cocos2d-starter-kit.svg?branch=master&style=flat-square)](https://travis-ci.org/qertis/cocos2d-starter-kit) [![Dependency Status](https://david-dm.org/qertis/cocos2d-starter-kit.svg?style=flat-square)](https://david-dm.org/qertis/cocos2d-starter-kit) [![devDependency Status](https://david-dm.org/qertis/cocos2d-starter-kit/dev-status.svg?style=flat-square)](https://david-dm.org/qertis/cocos2d-starter-kit#info=devDependencies) 
+> [![Build Status](https://travis-ci.org/tewst/cocos2d-starter-kit.svg?branch=master&style=flat-square)](https://travis-ci.org/tewst/cocos2d-starter-kit) [![Dependency Status](https://david-dm.org/tewst/cocos2d-starter-kit.svg?style=flat-square)](https://david-dm.org/tewst/cocos2d-starter-kit) [![devDependency Status](https://david-dm.org/tewst/cocos2d-starter-kit/dev-status.svg?style=flat-square)](https://david-dm.org/tewst/cocos2d-starter-kit#info=devDependencies) 
 
 ## Usage
 
