@@ -33,8 +33,12 @@
   },
   "scripts": {
     "run": "gulp",
+    "postinstall": "bower install && gulp build",
     "start": "./node_modules/.bin/nf start",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test"
+  },
+  "engines": {
+    "node": "5.5.0"
   },
   "author": "Denis Baskovsky",
   "license": "Apache License"
