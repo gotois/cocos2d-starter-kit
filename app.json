@@ -1,0 +1,21 @@
+{
+  "name": "cocos2d-starter-kit",
+  "scripts": {
+  },
+  "env": {
+    "PORT": "9000"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
