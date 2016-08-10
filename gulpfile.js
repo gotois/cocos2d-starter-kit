@@ -10,7 +10,7 @@ const browserSync = require('browser-sync');
 const uglify = require('gulp-uglify');
 const nodemon = require('gulp-nodemon');
 const mochaPhantomJS = require('gulp-mocha-phantomjs');
-const webpackConfig = require("./client/webpack.config");
+const webpackConfig = require('./client/webpack.config');
 
 const clientPath = './client';
 const serverPath = './server';
