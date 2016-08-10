@@ -32,8 +32,8 @@
     "webpack-stream": "^3.1.0"
   },
   "scripts": {
+    "postinstall": "bower install",
     "run": "gulp",
-    "postinstall": "bower install && gulp build",
     "start": "./node_modules/.bin/nf start",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test"
   },
