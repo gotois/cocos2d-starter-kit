@@ -30,13 +30,15 @@
     "mocha-lcov-reporter": "^1.2.0",
     "run-sequence": "^1.1.5",
     "systemjs-plugin-babel": "0.0.13",
-    "webpack-stream": "^3.1.0"
+    "webpack-stream": "^3.1.0",
+    "istanbul": ">=0.4.4",
+    "codecov": ">1.0.0"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",
     "run": "gulp",
     "start": "./node_modules/.bin/nf start",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test"
+    "test": "istanbul cover ./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js --report lcovonly -- -R spec && gulp test"
   },
   "engines": {
     "node": "5.5.0"

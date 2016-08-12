@@ -5,10 +5,9 @@
 
 ```sh
 npm install
-bower install
 ```
 
-Put cocos2d engine to `client/vendors/cocos2d.js`
+Put Cocos2d-JS Engine to `client/vendors/cocos2d.js`
 
 Open page `http://localhost:5000/`
 
