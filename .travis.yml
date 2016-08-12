@@ -22,10 +22,8 @@ before_script:
   - npm install
 
 script:
-  - ./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec
   - npm test
-  - codecov
   - gulp build
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - npm run coverage
