@@ -26,8 +26,8 @@ gulp.task('lint', () => {
       `${clientPath}/src/**`,
       '!bower_components/',
       '!node_modules/',
-      `!${clientPath}/vendor/**`,
       // Server
+      `!${serverPath}/**/*.opts`,
       `${serverPath}/**`
     ])
     .pipe(eslint())
@@ -93,7 +93,7 @@ gulp.task('nodemon', () => {
     ],
     env: {
       HOST: 'localhost',
-      PORT: 9000,
+      PORT: 8000,
       HTTP_TIMEOUT: 1000
     },
     stdout: true,
@@ -118,8 +118,7 @@ gulp.task('www', ['clean'], () => {
       `${clientPath}/dist/**/*`,
       `${clientPath}/Fonts/*`,
       `${clientPath}/res/**`,
-      `${clientPath}/vendors/**`,
-      `!${clientPath}/bower_components`,
+      `${clientPath}/frameworks/**`,
       `!${clientPath}/src`,
       `!${clientPath}/webpack.config.js`,
       '!**/bower.json',

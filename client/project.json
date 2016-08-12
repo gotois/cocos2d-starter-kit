@@ -5,6 +5,11 @@
   "frameRate": 60,
   "id": "gameCanvas",
   "renderMode": 1,
+  "engineDir" : "vendors/cocos2d-html5",
+  "modules" : [
+    "cocos2d",
+    "socketio"
+  ],
   "jsList": [
     "./dist/game.min.js"
   ]

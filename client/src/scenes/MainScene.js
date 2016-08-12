@@ -11,6 +11,23 @@ function ctor() {
 
   const menuLayer = new layers.MenuLayer();
   this.addChild(menuLayer);
+
+  // Socket.IO example
+  const socket = io.connect('//localhost:4001');
+  socket.on('connect', () => {
+    socket.emit('hello', 'server');
+  });
+  socket.on('message', message => {
+    cc.log(`Received a ${ message }`);
+  });
+  socket.on('disconnect', () => {
+    cc.log('The client has disconnected!');
+  });
+  // Custom listeners
+  socket.on('status', data => {
+    cc.log(data);
+    socket.send('wazzaaaap!');
+  });
  
 }
 

@@ -1,27 +1,51 @@
+'use strict';
 const bunyan = require('bunyan');
 const Hapi = require('hapi');
-const server = new Hapi.Server();
-const api = require('./api');
-const env = process.env;
+const Inert = require('inert');
+const Path = require('path');
+const socketIO = require('socket.io');
 
-const log = bunyan.createLogger({
-  name: 'Cocos2d server',
-  level: 'info'
+const env = process.env;
+const server = new Hapi.Server();
+server.register(Inert, () => {
 });
 
 server.connection({
   host: env.HOST,
-  labels: ['api'],
+  labels: ['static'],
   port: env.PORT
 });
 
-server.register(api, err => {
-  if (err) {
-    throw err;
-  }
-
-  server.start();
-  log.info('server is running');
+server.connection({
+  host: env.HOST,
+  port: 4001,
+  labels: ['api']
 });
 
-global.log = log;
+const log = global.log = bunyan.createLogger({
+  name: 'Cocos2d server',
+  level: 'info'
+});
+
+const apiServer = server.select('api');
+global.io = socketIO(apiServer.listener);
+
+const staticServer = server.select('static');
+staticServer.route({
+  path: '/{client*}',
+  method: 'GET',
+  handler: {
+    directory: {
+      path: Path.join(__dirname, './../client')
+    }
+  }
+});
+
+server.start(error => {
+  if (error) {
+    throw error;
+  }
+
+  require('./api');
+  log.info('Server started');
+});

@@ -3,7 +3,6 @@
   "scripts": {
   },
   "env": {
-    "PORT": "9000"
   },
   "formation": {
     "web": {
@@ -11,7 +10,6 @@
     }
   },
   "addons": [
-
   ],
   "buildpacks": [
     {

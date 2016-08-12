@@ -15,21 +15,6 @@ function run() {
   if (typeof  window.io === 'undefined') {
     throw 'socket.io is not a defined';
   }
-  const socket = io.connect('//localhost:9000');
-  socket.on('connect', () => {
-    socket.emit('hello', 'server');
-  });
-  socket.on('message', message => {
-    cc.log(`Received a ${ message }`);
-  });
-  socket.on('disconnect', () => {
-    cc.log('The client has disconnected!');
-  });
-  // Custom listeners
-  socket.on('status', data => {
-    cc.log(data);
-    socket.send('wazzaaaap!');
-  });
 
 }
 
