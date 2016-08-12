@@ -93,7 +93,7 @@ gulp.task('nodemon', () => {
     ],
     env: {
       HOST: 'localhost',
-      PORT: 8000,
+      PORT: 4000,
       HTTP_TIMEOUT: 1000
     },
     stdout: true,

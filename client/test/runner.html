@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tests</title>
-    <meta charset="UTF-8">
+  <title>Tests</title>
+  <meta charset="UTF-8">
 
-    <link rel="stylesheet"
-          href="../../node_modules/mocha/mocha.css">
+  <link rel="stylesheet"
+        href="../../node_modules/mocha/mocha.css">
 
-    <script src="../../node_modules/mocha/mocha.js"></script>
-    <script src="../../node_modules/chai/chai.js"></script>
-    <script src="../../bower_components/system.js/dist/system.js"></script>
-    <script src="../../bower_components/cocos2d-html5/CCBoot.js"></script>
+  <script src="../../node_modules/mocha/mocha.js"></script>
+  <script src="../../node_modules/chai/chai.js"></script>
+  <script src="../vendors/system.js/dist/system.js"></script>
+  <script src="../vendors/cocos2d-html5/CCBoot.js"></script>
 </head>
 <body>
 
 <div id="mocha"></div>
 
 <script>
-    window.assert = chai.assert;
-    mocha.ui('bdd');
+  window.assert = chai.assert;
+  mocha.ui('bdd');
 
-    SystemJS.config({
-        transpiler: 'plugin-babel',
-        map: {
-            'plugin-babel': '../../node_modules/systemjs-plugin-babel/plugin-babel.js',
-            'systemjs-babel-build': '../../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
-        },
-        meta: {
-            '*.js': {
-                babelOptions: {
-                    es2015: true
-                }
-            }
+  SystemJS.config({
+    transpiler: 'plugin-babel',
+    map: {
+      'plugin-babel': '../../node_modules/systemjs-plugin-babel/plugin-babel.js',
+      'systemjs-babel-build': '../../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+    },
+    meta: {
+      '*.js': {
+        babelOptions: {
+          es2015: true
         }
-    });
+      }
+    }
+  });
 
-    SystemJS.import('runner.js');
+  SystemJS.import('runner.js');
 </script>
 
 </body>
