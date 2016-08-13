@@ -5,10 +5,8 @@
   "private": false,
   "dependencies": {
     "bunyan": "^1.8.1",
-    "cordova": "^6.0.0",
     "foreman": "^1.4.1",
     "hapi": "^14.1.0",
-    "inert": "^4.0.1",
     "node-uuid": "^1.4.7",
     "socket.io": "^1.4.8"
   },
@@ -42,8 +40,8 @@
     "postinstall": "bash ./bin/postinstall.sh",
     "run": "gulp",
     "start": "./node_modules/.bin/nf start",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test",
-    "coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/.bin/_mocha server/test/ && ./node_modules/.bin/codecov -e TRAVIS_NODE_VERSION"
+    "test": "bash ./bin/test.sh",
+    "coverage": "bash ./bin/coverage.sh"
   },
   "engines": {
     "node": "5.5.0"

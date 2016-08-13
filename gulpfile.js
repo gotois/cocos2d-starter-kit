@@ -3,7 +3,6 @@ const gulp = require('gulp');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const runSequence = require('run-sequence');
-const shell = require('gulp-shell');
 const eslint = require('gulp-eslint');
 const del = require('del');
 const browserSync = require('browser-sync');
