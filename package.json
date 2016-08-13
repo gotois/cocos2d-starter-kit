@@ -39,7 +39,7 @@
     "server"
   ],
   "scripts": {
-    "postinstall": "./bin/postinstall.sh",
+    "postinstall": "bash ./bin/postinstall.sh",
     "run": "gulp",
     "start": "./node_modules/.bin/nf start",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test",
