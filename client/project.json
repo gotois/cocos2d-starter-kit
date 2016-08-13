@@ -4,13 +4,15 @@
   "showFPS" : true,
   "frameRate": 60,
   "id": "gameCanvas",
-  "renderMode": 1,
+  "renderMode": 0,
+  "noCache" : false,
   "engineDir" : "vendors/cocos2d-html5",
+  "serverWS": "https://cocos2d-starter-kit.herokuapp.com/",
   "modules" : [
-    "cocos2d",
-    "socketio"
+    "cocos2d"
   ],
   "jsList": [
-    "./dist/game.min.js"
+    "vendors/socket.io-client/socket.io.js",
+    "dist/game.min.js"
   ]
 }

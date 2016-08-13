@@ -39,24 +39,19 @@
     "server"
   ],
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install",
+    "postinstall": "./bin/postinstall",
     "run": "gulp",
     "start": "./node_modules/.bin/nf start",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./server/test/runner.js && gulp test",
-    "coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/mocha/bin/_mocha server/test/ && ./node_modules/.bin/codecov -e TRAVIS_NODE_VERSION"
+    "coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=text ./node_modules/.bin/_mocha server/test/ && ./node_modules/.bin/codecov -e TRAVIS_NODE_VERSION"
   },
   "engines": {
     "node": "5.5.0"
   },
   "nyc": {
-    "include": [
-      "server/**/*.js"
-    ],
     "require": [
       "babel-core/register"
-    ],
-    "sourceMap": false,
-    "instrument": false
+    ]
   },
   "author": "Denis Baskovsky",
   "license": "Apache License"

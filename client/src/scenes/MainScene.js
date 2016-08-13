@@ -12,8 +12,11 @@ function ctor() {
   const menuLayer = new layers.MenuLayer();
   this.addChild(menuLayer);
 
-  // Socket.IO example
-  const socket = io.connect('//localhost:4001');
+  // Socket.IO connect
+  const socket = window.io.connect(location.hostname === 'localhost' ?
+    '//localhost:4000' :
+    cc.game.config.serverWS
+  );
   socket.on('connect', () => {
     socket.emit('hello', 'server');
   });
@@ -26,7 +29,7 @@ function ctor() {
   // Custom listeners
   socket.on('status', data => {
     cc.log(data);
-    socket.send('wazzaaaap!');
+    socket.send('Wazzaaaap!');
   });
  
 }

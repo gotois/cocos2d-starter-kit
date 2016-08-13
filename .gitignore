@@ -6,9 +6,10 @@
 /.nyc_output/
 
 /client/dist/
-publish/
 /client/**/*.map
 /client/vendors/
+/client/publish/
+publish/
 
 # Cordova
 platforms/*
