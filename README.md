@@ -5,6 +5,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d7124f2e22014cc786e48cb8771b81fa)](https://www.codacy.com/app/qertis/cocos2d-starter-kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tewst/cocos2d-starter-kit&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/tewst/cocos2d-starter-kit/branch/master/graph/badge.svg)](https://codecov.io/gh/tewst/cocos2d-starter-kit)
 
+<img src="http://www.cocos2d-x.org/attachments/802/cocos2dx_landscape.png" height="128">
+
 ## Install:
 ```sh
 npm install
