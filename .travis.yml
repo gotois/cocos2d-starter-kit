@@ -23,8 +23,7 @@ before_script:
 
 script:
   - npm test
-  - gulp build
-#  - cocos compile -p web -m release --advanced
+  - npm run build
 
 after_success:
   - npm run coverage

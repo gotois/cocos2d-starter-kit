@@ -43,7 +43,7 @@ gulp.task('webpack', () => {
   return gulp
     .src(`${clientPath}/src/game.js`)
     .pipe(webpackStream(webpackConfig))
-    .pipe(gulp.dest(`${clientPath}/dist/`));
+    .pipe(gulp.dest(`${clientPath}/res/dist/`));
 
 });
 
@@ -64,7 +64,7 @@ gulp.task('webpack-build', cb => {
       }
     }),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: false})
   );
 
   webpack(config, err => {
@@ -114,7 +114,6 @@ gulp.task('www', ['clean'], () => {
   return gulp
     .src([
       `${clientPath}/*`,
-      `${clientPath}/dist/**/*`,
       `${clientPath}/Fonts/*`,
       `${clientPath}/res/**`,
       `${clientPath}/frameworks/**`,
@@ -173,9 +172,7 @@ gulp.task('compress', () => {
 
   gulp
     .src([
-      'www/*.js',
-      'www/vendors/*.js',
-      '!www/dist/*.js'
+      'www/**/*.js'
     ], {base: './'})
     .pipe(uglify())
     .pipe(gulp.dest('.'));
@@ -187,13 +184,15 @@ gulp.task('compress', () => {
  */
 gulp.task('build', cb => {
 
-  return runSequence([
+  return runSequence(
+    [
       'lint',
       'webpack-build',
       'www',
       'compress'
     ],
-    cb);
+    cb
+  );
 
 });
 
@@ -213,7 +212,8 @@ gulp.task('test', () => {
  */
 gulp.task('default', cb => {
 
-  return runSequence([
+  return runSequence(
+    [
       'webpack',
       'nodemon',
       'serve'

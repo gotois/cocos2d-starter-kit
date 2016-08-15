@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    'path': path.join(__dirname, './dist'),
+    'path': path.join(__dirname, './res/dist'),
     'filename': '[name].min.js'
   },
   watch: true,

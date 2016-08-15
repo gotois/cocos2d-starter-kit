@@ -1,15 +1,13 @@
 # Deployed App
 /www/
 /node_modules/
-/bower_components/
 /coverage/
 /.nyc_output/
 
-/client/dist/
+/client/res/dist/
 /client/**/*.map
 /client/vendors/
 /client/publish/
-publish/
 
 # Cordova
 platforms/*

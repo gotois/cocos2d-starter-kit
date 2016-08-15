@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Cocos2d-Starter-Kit</title>
+    <title>Cocos2D-Starter-Kit</title>
 
     <link rel="icon" type="image/GIF"
           href="favicon.ico"/>
@@ -55,18 +55,18 @@
         div {
             -webkit-user-select: none;
             user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             padding: 0;
             margin: 0;
             overflow: hidden;
-            background-color: rgba(0, 0, 0, 1);
+            background-color: black;
         }
 
         canvas#gameCanvas {
-            background-color: rgba(0, 0, 0, 1) !important;
+            background-color: black !important;
         }
 
         #Cocos2dGameContainer {
@@ -90,7 +90,7 @@
 
             background-image: url(./res/HelloWorld.png);
             background-repeat: no-repeat;
-            background-color: rgba(0, 0, 0, 1);
+            background-color: black;
             background-position: center center;
             background-attachment: fixed;
 
@@ -100,6 +100,15 @@
         }
 
     </style>
+
+  <!-- Remove this line in production if you use cocos2d compile or change path to cocos2d lib -->
+  <script src="./vendors/cocos2d-html5/CCBoot.js"
+          charset="UTF-8"></script>
+
+  <script cocos
+          src="./main.js"
+          defer="defer"
+          charset="UTF-8"></script>
 </head>
 <body>
 
@@ -109,11 +118,8 @@
         width="800"
         height="480"></canvas>
 
-<script src="./vendors/cocos2d-html5/CCBoot.js"
-        charset="UTF-8"></script>
-<script cocos
-        src="./main.js"
-        defer="defer"
+<script defer="defer"
+        src="./res/dist/game.min.js"
         charset="UTF-8"></script>
 
 </body>

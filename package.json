@@ -37,10 +37,12 @@
     "server"
   ],
   "scripts": {
+    "clean": "bash ./bin/clean.sh",
     "postinstall": "bash ./bin/postinstall.sh",
     "run": "gulp",
     "start": "./node_modules/.bin/nf start",
     "test": "bash ./bin/test.sh",
+    "build": "bash ./bin/build.sh",
     "coverage": "bash ./bin/coverage.sh"
   },
   "engines": {
