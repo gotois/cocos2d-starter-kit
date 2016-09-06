@@ -11,9 +11,7 @@
 ```sh
 npm install
 ```
-
-Установите cocos CLI для автоматической сборки билда.
-Иначе Вам пропишите свой путь к cocos2d-js в директории vendors и исправьте путь к нему в index.html
+Install Cocos CLI for auto build. Or set custom cocos2d-js in vendors directory and change path in index.html
 
 
 ## Usage:

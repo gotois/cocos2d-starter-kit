@@ -1,8 +1,15 @@
 {
   "presets": ["es2015"],
+  "plugins" : [
+    "syntax-flow",
+    "tcomb",
+    "transform-flow-strip-types"
+  ],
   "env": {
     "test": {
-      "plugins": [ "istanbul" ]
+      "plugins": [
+        "istanbul"
+       ]
     }
   }
 }
