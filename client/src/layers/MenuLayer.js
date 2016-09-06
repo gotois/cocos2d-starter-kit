@@ -1,8 +1,10 @@
+/* @flow weak */
+
 export default cc.Layer.extend({
   ctor
 });
 
-function ctor() {
+function ctor(): void {
   this._super();
 
   const size = cc.view.getDesignResolutionSize();
@@ -12,8 +14,10 @@ function ctor() {
 
   this.addChild(sprite, 0);
 
+  const labelStr = 'Hello Cocos2d World!';
+
   const label = new cc.LabelTTF(
-    'Hello Cocos2d World!',
+    labelStr,
     'Arial',
     40
   );
