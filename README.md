@@ -13,14 +13,12 @@ npm install
 ```
 Install Cocos CLI for auto build. Or set custom cocos2d-js in vendors directory and change path in index.html
 
-
 ## Usage:
-```sh
+1. Change WS server path in project.json ("serverWS")
+2. ```sh
 gulp
 ```
-Change WS server path in project.json ("serverWS")
-
-Open webpage: `http://localhost:5000/`
+3. Open Webpage: `http://localhost:5000/`
 
 ## Tests:
 ### All tests
@@ -32,3 +30,6 @@ npm test
 ```sh
 gulp nodemon
 ```
+
+---
+Special for teWST Interactive

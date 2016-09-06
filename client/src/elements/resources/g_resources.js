@@ -3,7 +3,7 @@
 cc.loader.resPath = 'res/';
 cc.loader.audioPath = 'res/audio/';
 
-function res(): Array<?string> {
+function res() {
   return [
 
     /// Sprites
@@ -23,7 +23,6 @@ function res(): Array<?string> {
     //, ...
 
   ];
-
 }
 
 window.g_resources = res();

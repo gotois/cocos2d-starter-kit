@@ -41,14 +41,14 @@
     "server"
   ],
   "scripts": {
-    "clean": "bash ./bin/clean.sh",
     "postinstall": "bash ./bin/postinstall.sh",
-    "run": "gulp",
+    "clean": "bash ./bin/clean.sh",
     "flow": "./node_modules/.bin/flow",
     "start": "./node_modules/.bin/nf start",
     "test": "bash ./bin/test.sh",
     "build": "bash ./bin/build.sh",
-    "coverage": "bash ./bin/coverage.sh"
+    "coverage": "bash ./bin/coverage.sh",
+    "run": "gulp"
   },
   "engines": {
     "node": "5.5.0"
