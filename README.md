@@ -7,6 +7,17 @@
 
 <img src="http://www.cocos2d-x.org/attachments/802/cocos2dx_landscape.png" height="128">
 
+## Features:
+* Code coverage
+* Heroku config
+* Travis CI
+* ESlint
+* ES6 Flow Babel
+* Hapi WebServer
+* SocketIO
+* Cocos2d custom build or Cocos CLI build
+* ES6 Mocha tests (selenium in clientside)
+
 ## Install:
 ```sh
 npm install
