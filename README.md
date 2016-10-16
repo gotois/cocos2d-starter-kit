@@ -43,4 +43,4 @@ gulp nodemon
 ```
 
 ---
-Special for teWST Interactive
+Special for goto Interactive
