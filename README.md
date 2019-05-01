@@ -20,16 +20,14 @@
 
 ## Install
 ```sh
-git clone git@github.com:gotois/cocos2d-starter-kit.git
 npm install
 ```
+
 Install Cocos CLI for auto build or you should install custom cocos2d-js move it in vendors directory and change path in index.html
 
 ## Usage
 1. Change WS server path in project.json ("serverWS")
-2. ```sh
-gulp
-```
+2. ```gulp```
 3. Open Webpage: `http://localhost:5000/`
 
 ## Tests:
@@ -43,5 +41,4 @@ npm test
 gulp nodemon
 ```
 
-===
 Special for goto Interactive Software
